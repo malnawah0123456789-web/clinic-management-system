@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinicCare - Health Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <h1>ClinicCare</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#signup" class="btn-nav">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Welcome to ClinicCare</h2>
+                <p>Modern Health Management System for Doctors and Patients</p>
+                <p class="sub-text">Manage appointments, patient records, and prescriptions in one secure platform</p>
+                <a href="#signup" class="btn btn-primary">Get Started</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="hero-image">
+                <div class="illustration">
+                    <span class="icon">👨‍⚕️</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose ClinicCare?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">📋</span>
+                    <h3>Patient Records</h3>
+                    <p>Secure storage of complete medical history and patient information</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📅</span>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Easy booking and management of doctor appointments</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💊</span>
+                    <h3>Prescription Management</h3>
+                    <p>Digital prescriptions and medication tracking</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">👨‍⚕️</span>
+                    <h3>Doctor Profiles</h3>
+                    <p>Access to doctor information and availability</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Dashboard Analytics</h3>
+                    <p>Real-time statistics and clinic performance metrics</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Secure & Private</h3>
+                    <p>Encrypted data and HIPAA-compliant security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign Up Section -->
+    <section id="signup" class="signup">
+        <div class="container">
+            <div class="signup-wrapper">
+                <div class="signup-form-container">
+                    <h2>Create Your Account</h2>
+                    <p class="signup-subtitle">Join ClinicCare today and start managing your health</p>
+                    
+                    <div class="user-type-selector">
+                        <button class="type-btn active" onclick="switchUserType('patient')">🧑‍🤝 Patient</button>
+                        <button class="type-btn" onclick="switchUserType('doctor')">👨‍⚕️ Doctor</button>
+                        <button class="type-btn" onclick="switchUserType('admin')">👨‍💼 Admin</button>
+                    </div>
+
+                    <form id="signupForm" class="signup-form">
+                        <!-- Patient Form -->
+                        <div id="patientForm" class="form-section active">
+                            <div class="form-group">
+                                <label for="patientName">Full Name *</label>
+                                <input type="text" id="patientName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="patientDOB">Date of Birth *</label>
+                                    <input type="date" id="patientDOB" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="patientGender">Gender *</label>
+                                    <select id="patientGender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone">Phone Number *</label>
+                                <input type="tel" id="patientPhone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientEmail">Email Address *</label>
+                                <input type="email" id="patientEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientAddress">Address *</label>
+                                <textarea id="patientAddress" placeholder="Enter your address" rows="3" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Form -->
+                        <div id="doctorForm" class="form-section">
+                            <div class="form-group">
+                                <label for="doctorName">Full Name *</label>
+                                <input type="text" id="doctorName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctorLicense">License Number *</label>
+                                <input type="text" id="doctorLicense" placeholder="Enter your license number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctorSpecialty">Specialty *</label>
+                                <select id="doctorSpecialty" required>
+                                    <option value="">Select Specialty</option>
+                                    <option value="general">General Practice</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="dermatology">Dermatology</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctorPhone">Phone Number *</label>
+                                <input type="tel" id="doctorPhone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctorEmail">Email Address *</label>
+                                <input type="email" id="doctorEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="doctorExperience">Years of Experience *</label>
+                                <input type="number" id="doctorExperience" placeholder="Enter years of experience" required>
+                            </div>
+                        </div>
+
+                        <!-- Admin Form -->
+                        <div id="adminForm" class="form-section">
+                            <div class="form-group">
+                                <label for="adminName">Full Name *</label>
+                                <input type="text" id="adminName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminClinicName">Clinic Name *</label>
+                                <input type="text" id="adminClinicName" placeholder="Enter clinic name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPosition">Position *</label>
+                                <input type="text" id="adminPosition" placeholder="e.g., Clinic Manager" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminPhone">Phone Number *</label>
+                                <input type="tel" id="adminPhone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminEmail">Email Address *</label>
+                                <input type="email" id="adminEmail" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="adminClinicAddress">Clinic Address *</label>
+                                <textarea id="adminClinicAddress" placeholder="Enter clinic address" rows="3" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Common Fields -->
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <input type="password" id="password" placeholder="Create a strong password" required>
+                            <small class="password-hint">Minimum 8 characters, include uppercase, numbers, and symbols</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                    </form>
+
+                    <p class="login-link">Already have an account? <a href="#login">Sign In</a></p>
+                </div>
+
+                <div class="signup-info">
+                    <h3>Join thousands of healthcare professionals</h3>
+                    <div class="info-item">
+                        <span class="info-icon">✓</span>
+                        <p><strong>HIPAA Compliant:</strong> Your data is encrypted and secure</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✓</span>
+                        <p><strong>24/7 Access:</strong> Access your records anytime, anywhere</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✓</span>
+                        <p><strong>Easy Integration:</strong> Works with existing clinic systems</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✓</span>
+                        <p><strong>Expert Support:</strong> Dedicated customer support team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 ClinicCare. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
